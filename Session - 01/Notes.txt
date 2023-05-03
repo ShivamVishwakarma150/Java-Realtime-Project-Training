@@ -38,5 +38,3 @@ Part-5 : Major Project (Insurance Domain)
 Part-6 : TypeScript + Angular
 
 Part-7 : Linux + AWS Cloud
-
-Part-8 : Interview Preparation
