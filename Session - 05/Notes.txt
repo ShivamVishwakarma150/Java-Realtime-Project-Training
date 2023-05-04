@@ -1,0 +1,65 @@
+Types of Team in Project
++++++++++++++++++++++++++
+
+1) Onshore team: The team members who are working at client location
+
+2) Offshore team: The team members who are working from non-client location
+
+Note: Functional Team members will be available at Client location
+
+->Functional Team / BA team is responsible to collect requirements from the client
+
+->Developers and Testers will get requirements from the Functional Team
+
+Developers & Testers<-----------> Functional team <-------------->> Client
+
+
+Note: In Service Based companies we will get On-Site Opportunity.
+
+
+
+        B1 Visa -----> 3 to 6 Months
+
+        L1 Visa -----> 2 Years
+
+        H1 Visa (Lottery) ------> Work Permit
+
+----> Based on Project Requirement Onshore team members will come to Offshore and Offshore team members will go to Onshore (Project management will decide who should to onsite and offsite)
+
+
+++++++++++++++
+Types of Jobs
+++++++++++++++
+
+1) Permanent Jobs
+    - Company Payroll
+    - Provident Fund 
+    - Medical Insurance For you & For your family
+    - 2 to 3 months Notice Period 
+
+2) Contact Job 
+    - Payroll Company
+    - Client Company
+    - PF (Optional)
+    - Medical Insurance (Optional)
+    - Notice Period (very less)
+
+++++++++++++++++++++++++++
+What is Role Chart in IT
+++++++++++++++++++++++++++
+
+Role Chart means Designations in IT
+
+0-2 years: Software Trainee / Associate Analyst
+
+2-4 years: Business Analyst/System Analyst
+
+4-7 years: Consultant / Software Engineer / System Engineer
+
+7-10 Years: Sr. Consultant / Sr. S/w Engineer
+
+10-14 Years: Manager
+
+14-18: Sr. Manager
+
+18+ : Director / VP / Principle / CEO / CTO
