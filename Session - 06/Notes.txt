@@ -1,0 +1,53 @@
+Module - 2 (Java Realtime Tools - 20+ Tools)
+=============================================
+
+1) Maven (Build Automation Tools)
+2) Gradle (Build Automation Tools)
+
+3) Project Lombok
+
+4) Logging tools (Log4J, Logback, Logstash, SLF4J)
+
+5) Log Monitoring (Splunk,ELK stack, Putty & Winscp)
+
+6) JUNIT with Mocking
+
+7) Jacocco (Code Coverage) ===> Industry Standard - 80%
+
+8) Sonar Qube (Code Review)
+
+        Cognitive Complexity
+        Cyclomatic Complexity
+
+9) Nexus Repository Server (To Store Build Artifacts - Jars and Wars)
+
+10) Github (Source Code Repository Server)
+
+11) Bitbucket (Source Code Repository Server)
+
+12) JIRA (Project management tool & Bug Tracking Tool)
+
+13) JMETER (Performance Testing Tool)
+    Calculate Avg Response time of our application on particular criteria.
+
+14) POSTMAN (Api Testing Software)
+
+15) Swagger (API Documentation)
+
+16) JENKINS (CI CD)
+
+17) Docker (Containerization Platform + Managing Docker Containers)
+
+18) Kubernetes (Orchestration Platform - Managing Docker containers)
+
+19) Apache kafka (Messaging Queue)
+
+20) Redis Server (Distributed Cache)
+
+21) Reports Generation (Apache POI & Open PDF)
+
+
+
+
+
+
