@@ -240,7 +240,7 @@ Maven Multi Module Project
 
 -> Inside parent project we can create child projects (child projects are called as Maven Modules)
 
--> One parent project can contain multiple childs (Mutile Modules)
+-> One parent project can contain multiple childs (Multiple Modules)
 
 -> Right click on parent project --> New -> Maven -> Maven Module -> Create it
 
