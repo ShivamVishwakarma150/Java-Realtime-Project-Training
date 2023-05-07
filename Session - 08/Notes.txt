@@ -1,0 +1,220 @@
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Source Code Repository Tools (or) Version Control Softwares
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-> Multiple developers will work for project development
+
+-> Developers will be working from multiple locations
+
+-> All developers code should be store at one place (Code Integration Should Happen)
+
+-> To integrate all the developers source code at one place we will use Sourcecode Repository Softwares
+
+
+Advantages with Source code repository softwares
+++++++++++++++++++++++++++++++++++++++++++++++
+
+1) All the developers can connect to repository server and can integrate the code
+
+2) Repository server will provide monitored access
+
+				- Who
+			     - When
+				- Why
+				- What
+
+
+Repository Tools
+++++++++++++++++
+
+SVN (outdated)
+
+Git Hub
+
+BitBucket
+
+
+Environment Setup to work with Git Hub
+++++++++++++++++++++++++++++++++++++++
+
+1) Create Github account ( www.github.com )
+
+2) Download and install Git Client software ( https://git-scm.com/downloads )
+
+3) Once installation completed, right click on the mouse and verify git options display (If git options displaying our git client installation completed successfully)
+
+
+
+Working with GitHub
++++++++++++++++++++
+-> Login into github account with your credentials
+
+-> Create Repository in github
+
+Note: Repository is used to store project source code. Every Project will have one repository
+
+-> When we create a repository, unique URL will be generated with Repository Name (i.e Repo URL)
+
+-> All the developers will connect to repository using Repository URL
+
+-> We can create 2 types of Repositories in Git Hub
+	
+			1) public repository 
+
+			2) private repository
+
+-> Public Repository means everybody can access but we can choose who can modify our repository
+
+-> Private Repository means we will choose who can access and who can modify
+
+
+		Repo URL : https://github.com/ShivamVishwakarma150/GIT-Training.git
+
+
+
+Working with Git Bash
++++++++++++++++++++++
+
+-> Git Bash we can use as Git Client software to perform Git Operations
+
+-> Download and install git client (https://git-scm.com/downloads)
+
+-> Right Click on Mouse and choose "Open Git Bash Here"
+
+
+git help : It will display frequently used git commands
+
+git help <cmd-name> : It will open documentation for given command
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++
+Configure Your Email and Name in GitBash with Commands
++++++++++++++++++++++++++++++++++++++++++++++++++
+$ git config --global user.email "youremail@yourdomain.com"
+
+$ git config --global user.name "name"
+
+
+
+
+
+
+
+$ git init : To initialize our folder as git working tree folder
+
+$ git clone : To clone git repository to our machine from github.com 
+
+		Syntax : $ git clone <project-repo-url>
+
+$ git status : It will display staged , un-staged and un-tracked files
+
+		Syntax : $ git status
+
+		Staged Files : The files which are added for commit
+
+		Un-Staged Files : The files which are modified but not added for commit
+
+		Un-tracked files : Newly created files
+
+Note: To commit a file(s), we should add to staging area first
+
+
+$ git add : It is used to add file(s) to staging area
+
+		Syntax : $ git add <file-name>
+
+				$ git add .
+
+
+$ git commit : It is used to commit staged files to git local repository
+
+		Syntax : $ git commit -m 'reason for commit'
+
+
+$ git push : To push changes from git local repository to git central repository
+
+		Syntax  : $ git push
+
+
+
+Steps to push code to github central repository
+++++++++++++++++++++++++++++++++++++++++++++++++
+
+1) Create one public repository in git hub (take github repo url)
+
+2) Clone github repository using 'git clone' command
+
+		$ git clone 'repo-url'
+
+3) Navigate to repository folder
+
+4) Create one file in repository folder
+
+		$ touch Demo.java
+
+5) Check status of the file using 'git status' command
+
+		$ git status (It will display as untracked file)
+
+6) Add file to staging area using 'git add' command
+
+		$ git add .
+
+7) Commit file to git local repository
+
+		$ git commit -m 'commit-msg'
+
+8) Push file from git local repository to git central repository using 'git push' command
+
+		$ git push
+
+Note: If you are doing 'git push' for first time it will ask to enter your github account password.
+
+
+------------------------------------------------------------------------------------------------------------------
+Note: Git bash will ask our password only for first time. It will save our git credentials in Credential Manager in Windows machine.
+
+-> Go to Credential Manager -> Windows Credentials -> Select Github -> We can modify and delete saved credentials from here
+------------------------------------------------------------------------------------------------------------------
+
+-> When we do git commit then it will generate a commit-id with 40 characters length
+
+-> From this commit-id it will display first 7 characters in git hub central repository
+
+-> We can check commit history using 'git log' command
+
+---------------------------------------------------------------------------------------------------------------------
+Steps to commit Maven Project to Github Repository
+---------------------------------------------------------------------------------------------------------------------
+
+1) Create Maven Project
+
+2) Create GitHub Repository
+
+Note: After creating git repository, it will display set of commands to execute
+
+3) Open gitbash from project folder and execute below commands
+
+$ git init
+$ git add .
+$ git commit -m 'commit-msg'
+$ git branch -M main
+$ git remote add origin <repo-url>
+$ git push -u origin master
+
+--------------------------------------------------------------------------------------------------------------------
+git help
+git config
+git init
+git status
+git add .
+git restore
+git commit -m 'msg'
+git push
+git clone
+git log
+git remote add 
+git pull
+--------------------------------------------------------------------------------------------------------
+
