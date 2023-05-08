@@ -1,0 +1,45 @@
+++++++++++
+git Stash
+++++++++++
+-> Means Backup in temporary Location 
+-> After doing some changes, to make working tree clean we will use "git stash" option.
+
+To stash current code 
+-> git stash 
+
+To get back Code 
+-> git stash apply
+
+Use-case 
+=========
+Manager assigned BUG-121 to fix @9:00 AM
+You have started code changes to fix the bug 
+By 12 PM few code changes completed... (bug fixed partially)
+
+By 12:10 PM manager told that BUG-122 is high priority than BUG-121...
+Park your work for BUG-121 and fix BUG-122 first and push the changes Once BUG-122 is completed then continue your work on BUG-121..
+
+
+When we are working on one task suddenly we may get some other priority task.
+
+Usecase
+++++++++
+-> ager assigned task id : 101
+-> I am working on that task (i am in middle of the task)
+-> Manager told that stop the work for 101 and complete 102 on priority. 
+-> Once 102 is completed then resume your work on 101
+
+-> When manager asked me to start 102 task, i have already done few changes for 101 
+  (partially completed)
+  
+-> We can't push partial changes to repository because with our partial changes existing functionality may break.
+
+-> We can't delete our changes because we have spent few hours of time to implement those changes
+
+
+***************  In this scenario we will go for 'git stash' option *********************
+
+=> Git stash is used to save working tree changes to temporary location and make working tree clean.
+
+-> After priority work completed we can get stashed changes back using 'gitstash apply'
+
