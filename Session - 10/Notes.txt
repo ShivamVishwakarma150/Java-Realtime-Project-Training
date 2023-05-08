@@ -1,0 +1,35 @@
++++++++++++
+Git Branches
++++++++++++
+
+-> Git Branches are used to maintain separate code bases for our project
+
+-> Multiple teams can work Parallely using Git Branches Concept
+
+-> In GiT repository we can create multiple branches
+
+master / main
+develop
+qa
+release
+research
+
+-> development team will integrate the code in 'develop' branch
+
+-> bug-fixing team will integrate the code in 'qa' branch
+
+-> R & D team will integrate the code in 'research' branch
+
+
+-> In github we can create branches
+
+-> To clone particular branch in git repo we will use below command
+
+		$ git clone -b <branch-name> <repo-url>
+
+
+Note: We can create any no of branches in one repository
+
+-> If you are working on any R&D task then it is better to use new branch for your r&d so that existing functionality will not break.
+
+
