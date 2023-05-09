@@ -33,3 +33,82 @@ Note: We can create any no of branches in one repository
 -> If you are working on any R&D task then it is better to use new branch for your r&d so that existing functionality will not break.
 
 
+Steps to do branch merging
+++++++++++++++++++++++++++
+
+1) Create feature branch from main branch
+
+2) clone feature branch 
+
+3) create new file in feature branch then commit and push to central repo
+
+4) Go to central repository then create pull request to merge feature branch changes to main branch
+
+Note: Once feature branch changes are merged to main branch then we can delete feature branch (if required)
+
+################################
+How to clone particular Branch 
+################################
+
+# To clone default branch (main or master)
+$ git clone <repo-url>
+
+# To clone specific branch 
+$ git clone  -b <branch-name> <repo-url>
+
+-> We can merge changes from one branch to another branch using 'pull request'.
+
+
++++++++++++++++++
+Branch Switching 
++++++++++++++++++
+
+-> Using git bash we can switch from one branch to another branch using 'checkout' command 
+
+
+$ git checkout main // if you all ready in develop branch 
+
+++++++++++++++++++++++
+What is .gitignore ?
++++++++++++++++++++++
+
+-> This .gitignore is used to configure the files or folders which we want to ignore from our commits
+
+-> The files and folders which are not required to commit to central repository those things we can configure in .gitignore file
+
+Ex: In maven project 'target' folder will be available which is not required to commit to central repository. This we can configure in .gitignore file.
+
+---------------------------------------.gitignore-------------------------------------------------------
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
