@@ -1,0 +1,76 @@
+++++++++++++++++++++++
+git merge vs git rebase
+++++++++++++++++++++++
+
+=> These commands are used to merge changes from one branch to another branch
+
+-> git merge will maintain commit history
+
+-> git rebase will not maintain that rebase history
+
+-> When we are working on particular sprint and we want to merge changes from one branch to another branch then we will use 'git merge' command
+
+-> Once sprint-1 is delivered then we want to take latest code of sprint-1 to start sprint-2 development. In this scenario we don't need commit history so we will use 'git rebase' command.
+
+++++++++++++++++++++++
+What is git pull command 
+++++++++++++++++++++++
+
+-> pull command is used to take latest changes from repository to local
+
+-> When we want to make some changes to code, it is always recommended to take git pull
+
+
+Note: When we execute 'git pull' there is a chance of getting conflicts. We need to resolve the conflict and we should push the code without conflicts.
+
+
+What is Source Code repository
+Why we need source code repository
+What are the source code repository servers available
+What is Code Integration
+What is Monitored Access 
+What is git hub
+What is git 
+What is version control
+What is Repository
+Public Repository vs Private Repository
+Cloning Repository
+Staged vs Unstaged vs Untracked File
+Adding Files to Stating Area
+Unstaging the files from staging
+Discarding local changes
+What is working tree
+What is Local Repository
+What is Central Repository
+Commit from working tree to local repo
+push from local repo to central repo
+Taking latest code changes
+push vs pull
+What is conflict
+How to resolve conflicts
+What is branch in git hub
+How to create branches
+How to clone particular branch
+how to switch to particular branch
+How to merge branches
+What is pull request
+git merge vs rebase
+what is .gitignore
+
+git init
+git help
+git config
+git clone 
+git status
+git add .
+git add <file-name>
+git restore
+git commit
+git push
+git pull
+git log
+git rm
+git branch
+git checkout
+git merge
+git rebase
