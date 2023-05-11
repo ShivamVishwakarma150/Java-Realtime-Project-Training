@@ -1,0 +1,28 @@
+Q) Who will create user stories in your project?
+    Ans) Anyone 
+
+
+
+Q) Who will assign stories to team members 
+    Ans) Team Lead / Scrum Master / You itself 
+
+
+
+Q) Once sprint started can we change story point of a story ?
+Ans) We should not change 
+
+
+
+Q) If you are not able to complete you stories then what you will do?
+Ans) We need to inform to scrum master why it is taking more time.
+
+
+
+Q) If you are not able to join scrum call then how you will provide your work status to scrum master.
+Ans) Through Email.
+
+
+
+Note: In Sprint planning meeting we should inform our leave plans based on that Sprint will be planned..
+
+
