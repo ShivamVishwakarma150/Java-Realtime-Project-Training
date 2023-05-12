@@ -1,0 +1,61 @@
+###########
+Logging
+###########
+
+-> Logging is a process of storing application execution details
+
+-> Log messages will help us to understand the problems occurring in the application execution
+
+-> If any problem occurs in  project execution we need to check log file of that project to find out the root cause
+
+-> In Realtime, for every project Logging will be implemented
+
+
+						logging					check logs
+			application ---------------------> Log file <------------------------------developers
+
+
+###################
+Logging Architecture
+####################
+
+
+1) Logger   : It is an API  which provides methods to perform logging
+
+		Ex : trace ( ),  debug ( ) , info ( ), warn ( ), error ( ) , fatal ( ) etc....
+
+2) Layout : It represents log msg format (what info should present in log msg)
+
+		Ex:  DATE TIME  ClassName  Method Name : Log Msg
+
+3) Appender	: It is used to write the log msg to destination
+
+		Ex: Console Appender to write log msg to console
+
+		    FileAppender to write log msg to log file
+
+		    RollingFileAppender to write log msgs to log file based on Rolling Policies
+		
+				- TimeBasedRolling    (Based on given time new log file will be created)
+				- SizeBasedRolling  (Based on given size new log file will be created)
+
+
+############
+Log Levels
+###########
+
+-> Log level will represent priority of log msg
+					
+
+		TRACE  	 => 	DEBUG	=>	INFO	=>	WARN	=> 	ERROR	=> 	FATAL
+
+
+-> Log messages we will generate using Log Levels
+
+-> Based On Log Level Configured, the log msgs will be printed
+
+-> From the configured level to higher level logs will be printed
+
+
+Note: In Spring Boot the default log level is 'INFO'
+
