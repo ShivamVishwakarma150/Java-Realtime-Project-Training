@@ -57,5 +57,5 @@ Log Levels
 -> From the configured level to higher level logs will be printed
 
 
-Note: In Spring Boot the default log level is 'INFO'
+Note: In Spring Boot the default log level is 'INFO'.
 
