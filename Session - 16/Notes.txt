@@ -1,0 +1,84 @@
+#################
+01-Mini Project
+##################
+
+-> Develop one microservice to manage insurance plans of our project
+
+-> Microservice should have below functionalities
+
+
+1) Create Plan
+2) View Plans
+3) Edit & Update Plan
+4) Activate & De-Activate
+5) Delete Plan (Hard Delete)
+
+
+Key-Points: 
+
+Tech Stack : Spring Boot, REST API, Data JPA & H2 DB
+
+-> Use Embedded Database (h2) For Storage
+-> Provide Swagger Documentation
+-> Push Code into Git Hub Repo
+-> Deploy Project into AWS Cloud Using JENKINS CI CD
+
+
+
+
+##############
+Database Table
+##############
+
+Table-1 : PLAN_CATEGORY
+
+CATEGORY_ID   			NUMBER		PRIMARY KEY
+CATEGORY_NAME		    VARCHAR
+ACTIVE_SW			    CHAR
+CREATE_DATE			    DATE
+UPDATE_DATE			    DATE
+CREATED_BY			    VARCHAR
+UPDATED_BY			    VARCHAR
+
+
+Table-2 :  PLAN_MASTER
+
+PLAN_ID						NUMBER			PRIMARY KEY
+PLAN_NAME					VARCHAR
+PLAN_START_DATE			    DATE			
+PLAN_END_DATE				DATE
+PLAN_CATEGORY_ID			NUMBER
+ACTIVE_SW					CHAR
+CREATE_DATE				    DATE
+UPDATE_DATE				    DATE
+CREATED_BY				    VARCHAR
+UPDATED_BY				    VARCHAR
+
+
+
+
+Entity Classes
+------------------------
+PlanCategory.java
+Plan.java
+
+
+Dao Layer / Repository Layer
+---------------------------------------
+PlanCategoryRepo.java 
+PlanRepo.java
+
+
+Service Layer
+--------------------
+PlanService.java (I)
+PlanServiceImpl.java (C)
+
+WebLayer
+--------------
+PlanRestController.java
+
+
+Config
+----------
+SwaggerConfig.java
