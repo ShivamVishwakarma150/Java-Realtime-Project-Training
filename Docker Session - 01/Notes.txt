@@ -1,0 +1,79 @@
+1) Application Stack
+2) Life without Docker
+3) Life with Docker
+4) Docker Introduction
+5) Docker Architecture
+6) Docker Installation(Linux VM - AWS )
+7) Docker Commands
+8) Dockerfile
+9) Docker Network
+10) Docker Volumes
+11) Docker Compose 
+12) Docker Swarm (Orchestration Platform)
+
+
+===========
+Kubernetes
+===========
+
+1) DockerSwarm vs Kubernetes (K8s)
+2) Kubernetes Introduction
+3) Kubernetes Architecture
+4) Kubernetes Terminology
+5) Kubernetes Setup (Self Managed CLuster)
+6) EKS (Elastic Kubernetes Service - AWS)
+7) Namespaces
+8) Pods
+9) POD Lifecycle
+10) Services (CLuster IP, Node Port and Load Balancer)
+11) ReplicationController & ReplicaSet
+12) DaemonSet & StatefulSet 
+*** 13) Deployment (Recreate, Rolling Update & BlueGreen Methodology)
+14) ConfigMap & Secrets 
+14) K8S Volumes 
+15) HELM Charts
+16) K8S Monitoring Tools 
+        - Grafana
+        - Prometheus
+        - ELK Stack (Elastic Search,Logstash/ FileBeat & Kibana)
+
+
+
+Application Development
++++++++++++++++++++++
+
+-> Collection of programs is called as software project
+
+-> Software project contains several components
+
+		1) Front end components (User interface logic)
+
+		2) Backend components (Business Logic)
+
+		3) Database Components (Persistence Logic)
+
+
+-> In order to deploy our application in a machine we need to setup all the Softwares which are required to our application
+
+			Ex: OS, Java 1.8v, MYSQL DB, Tomcat Web Server 9.0v etc.....
+
+-> In Realtime project should be deployed into multiple environments for testing purpose
+
+			Ex : DEV, SIT, UAT, PILOT and PROD
+
+
+-> DEV env will be used by Developers to perform integration testing
+
+-> SIT env will be used by Testing team to test functionality of the application
+
+-> UAT env will be used by Client to test functionality of the application
+
+-> PILOT env means pre-production testing env
+
+-> PROD means live environment (It is used to deliver the project)
+
+
+-> To deploy application to these many environments we need to take of all the software required to run our application in all environments. It is very difficult task.
+
+
+56:00
