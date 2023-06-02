@@ -1,0 +1,259 @@
+package com.shivam.entity;
+
+import java.time.LocalDate;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import lombok.Data;
+
+@Entity
+@Table(name="USER_MASTER")
+@Data
+public class UserMaster {
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private Integer userId;
+	
+	private String fullname;
+	
+	private String email;
+	
+	private Long mobile;
+	
+	private String gender;
+	
+	private LocalDate dob;
+	
+	private Long ssn;
+	
+	private String password;
+	
+	private String accStatus;
+	
+	private LocalDate createdDate;
+	
+	private LocalDate updatedDate;
+	
+	private String createdBy;
+	
+	private String updatedBy;
+	
+	
+}
+
+
+
+public interface UserMasterRepo extends JpaRepository<UserMaster, Integer>{
+	
+	public UserMaster findByEmail(String email);
+}
+
+
+package com.shivam.service;
+
+import java.util.List;
+
+import com.shivam.bindings.ActivateAccount;
+import com.shivam.bindings.Login;
+import com.shivam.bindings.User;
+
+public interface UserMgmtService {
+
+	public boolean saveUser(User user);
+	
+	public boolean activateUserAcc(ActivateAccount activateAcc);
+	
+	public List<User> getAllUsers();
+	
+	public User getUserById(Integer userId);
+	
+	public boolean deleteUserById(Integer userId);
+	
+	public boolean changeAccountStatus(Integer userId,String accStatus);
+	
+	public String login(Login login);
+	
+	public String forgotPwd(String email);
+	
+}
+
+
+package com.shivam.service;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+import java.util.Random;
+
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
+import org.springframework.stereotype.Service;
+
+import com.shivam.bindings.ActivateAccount;
+import com.shivam.bindings.Login;
+import com.shivam.bindings.User;
+import com.shivam.entity.UserMaster;
+import com.shivam.repo.UserMasterRepo;
+
+@Service
+public class UserMgmtServiceImpl implements UserMgmtService {
+
+	@Autowired
+	private UserMasterRepo userMasterRepo;
+	
+	@Override
+	public boolean saveUser(User user) {
+		
+		UserMaster entity=new UserMaster();
+		BeanUtils.copyProperties(user, entity);
+		
+		
+		entity.setPassword(generateRandomPassword());
+		entity.setAccStatus("In-Active");
+		UserMaster save = userMasterRepo.save(entity);
+		
+		// TODO: Send Registration Email
+		
+		return save.getUserId()!=null;
+	}
+
+	@Override
+	public boolean activateUserAcc(ActivateAccount activateAcc) {
+		UserMaster entity=new UserMaster();
+		entity.setEmail(activateAcc.getEmail());
+		entity.setPassword(activateAcc.getTempPwd());
+		
+		//QBE
+		Example<UserMaster> of = Example.of(entity);
+		
+		List<UserMaster> findAll= userMasterRepo.findAll(of);
+		
+		if(findAll.isEmpty()) {
+			return false;
+		}else {
+			UserMaster userMaster = findAll.get(0);
+			userMaster.setPassword(activateAcc.getNewPwd());
+			userMaster.setAccStatus("Active");
+			userMasterRepo.save(userMaster);
+			return true;
+			
+		}
+		
+	}
+
+	@Override
+	public List<User> getAllUsers() {
+		List<UserMaster> findAll = userMasterRepo.findAll();
+		
+		List<User> users=new ArrayList<>();
+		
+		for(UserMaster entity:findAll) {
+			User user= new User();
+			BeanUtils.copyProperties(entity, user);
+			users.add(user);
+		}
+		
+		return users;
+	}
+
+	@Override
+	public User getUserById(Integer userId) {
+		Optional<UserMaster> findById = userMasterRepo.findById(userId);
+		
+		if(findById.isPresent()) {
+			User user=new User();
+			UserMaster userMaster=findById.get();
+			BeanUtils.copyProperties(userMaster,user);
+			return user; 
+		}
+		return null;
+	}
+
+	@Override
+	public boolean deleteUserById(Integer userId) {
+		try {
+			userMasterRepo.deleteById(userId);
+			return true;
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	@Override
+	public boolean changeAccountStatus(Integer userId, String accStatus) {
+		Optional<UserMaster> findById = userMasterRepo.findById(userId);
+		if(findById.isPresent()) {
+			UserMaster userMaster=findById.get();
+			userMaster.setAccStatus(accStatus);
+		return true;
+		}
+		return false;
+	}
+
+	@Override
+	public String login(Login login) {
+		
+		UserMaster entity=new UserMaster();
+		
+		entity.setEmail(login.getEmail());
+		entity.setPassword(login.getPassword());
+		
+		Example<UserMaster> of=Example.of(entity);
+		List<UserMaster> findAll = userMasterRepo.findAll(of);
+		
+		if(findAll.isEmpty()) {
+			return "Invalid Credentials";
+			
+		}else {
+			UserMaster userMaster=findAll.get(0);
+			if(userMaster.getAccStatus().equals("Active")) {
+				return "SUCCESS";
+			}else {
+				return "Account not activated";
+			}
+		}
+	}
+
+	@Override
+	public String forgotPwd(String email) {
+		UserMaster entity=userMasterRepo.findByEmail(email);
+		
+		if(entity==null) {
+			return "Invalid Email";
+			
+		}
+		
+		// TODO : Send pwd to user in Email
+		
+		return null;
+	}
+	
+	private String generateRandomPassword() {
+		    String upperAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+		    String lowerAlphabet = "abcdefghijklmnopqrstuvwxyz";
+		    String numbers = "0123456789";
+		    
+		    String alphaNumeric = upperAlphabet + lowerAlphabet + numbers;
+		    StringBuilder sb = new StringBuilder();
+		    Random random = new Random();
+		    int length = 6;
+
+		    for(int i = 0; i < length; i++) {
+		      int index = random.nextInt(alphaNumeric.length());
+		      char randomChar = alphaNumeric.charAt(index);
+		      sb.append(randomChar);
+		    }
+
+		    String randomString = sb.toString();
+		    return randomString;
+
+	}
+
+}
