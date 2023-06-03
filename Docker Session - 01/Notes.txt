@@ -75,5 +75,3 @@ Application Development
 
 -> To deploy application to these many environments we need to take of all the software required to run our application in all environments. It is very difficult task.
 
-
-56:00
