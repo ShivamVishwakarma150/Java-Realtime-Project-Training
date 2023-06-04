@@ -1,0 +1,28 @@
+1) What is application stack
+		- Frontend
+		- Backend
+		- Database
+
+2) Application Environments (Non-Prod & Prod)
+		- Dev Env
+		- SIT Env
+		- UAT Env
+		- Pre Prod Env
+		- Prod Env (live)
+
+3) Life without Docker
+
+4) Life with Docker
+
+5) What is Docker  (Platform to run our applications)
+
+6) Docker Architecture
+		
+		- Dockerfile  (Set of instructions to build docker image)
+
+		- Docker Image  (package which contains source code + dependencies)
+
+		- Docker Registry ( Docker Hub, AWS ECR )
+
+		- Docker Container (It is runtime instance of our application)
+
