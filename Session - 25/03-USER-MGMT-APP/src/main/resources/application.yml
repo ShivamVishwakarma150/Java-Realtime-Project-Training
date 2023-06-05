@@ -1,0 +1,28 @@
+server:
+  port: 8085
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    password: Shivam@123
+    url: jdbc:mysql://localhost:3306/sbms
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  mvc:
+    pathmatch:
+      matching-strategy: ant-path-matcher
+      
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: <email>
+    password: <pwd>
+    properties:
+      mail:
+       smtp:
+        auth: true
+        stattls:
+         enable: true
+      
